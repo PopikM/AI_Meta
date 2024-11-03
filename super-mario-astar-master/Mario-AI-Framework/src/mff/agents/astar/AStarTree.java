@@ -17,6 +17,9 @@ public class AStarTree {
 
     float marioXStart;
     int searchSteps;
+    
+    static public int SEARCH_STEPS;
+    static public float TIME_TO_FINISH_WEIGHT;
 
     static boolean winFound = false;
     static final float maxMarioSpeedX = 10.91f;
@@ -34,7 +37,7 @@ public class AStarTree {
     HashMap<Integer, Float> visitedStates = new HashMap<>();
     
     public AStarTree(MarioForwardModelSlim startState, int searchSteps) {
-    	this.searchSteps = searchSteps;
+    	this.searchSteps = SEARCH_STEPS;
 
     	marioXStart = startState.getMarioX();
 
@@ -67,7 +70,7 @@ public class AStarTree {
     
     private float calculateCost(MarioForwardModelSlim nextState, int nodeDepth) {
         float timeToFinish = (exitTileX - nextState.getMarioX()) / maxMarioSpeedX;
-        timeToFinish *= 1.1;
+        timeToFinish *= TIME_TO_FINISH_WEIGHT;
         return nodeDepth + timeToFinish;
 	}
     
