@@ -2,8 +2,8 @@
 #PBS -q default@cerit-pbs.cerit-sc.cz
 #PBS -l walltime=20:00:00
 #PBS -l select=1:ncpus=1:mem=4gb:scratch_local=1gb:spec=5.1:cluster=adan
-#PBS -e /auto/vestec1-elixir/home/sosi123/job_logs
-#PBS -o /auto/vestec1-elixir/home/sosi123/job_logs
+#PBS -e /auto/brno2/home/popekmi/job_logs
+#PBS -o /auto/brno2/home/popekmi/job_logs
 
 DATADIR=/auto/vestec1-elixir/home/sosi123/repo/super-mario-astar
 RESULTDIR=/auto/vestec1-elixir/home/sosi123/results/astar
