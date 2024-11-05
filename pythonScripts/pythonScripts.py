@@ -45,7 +45,7 @@ df_fin = df.pivot(index="dfpap", columns="dfpmp", values="most backtracked nodes
 print(df_fin)
 
 plt.imshow(df_fin, cmap="hot")
-plt.title("Run time")
+plt.title("Most Backtracked nodes")
 plt.ylabel("DFPAP")
 plt.xlabel("DFPMP")
 plt.yticks(range(len(df_fin.index)), df_fin.index)

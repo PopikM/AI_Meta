@@ -16,6 +16,8 @@ Dále vidíme, že při `SEARCH_STEPS=20` agent téměř nevyhrává. Moje hypot
 
 ## ELECTIVE TASK - Polynomiální penalizace při odchodu od cesty
 
+### První pokus
+
 Parametry:
  - NODE_DEPTH_WEIGHT = 1
  - SEARCH_STEPS = 4 *(zvoleno podle Common Task)*
@@ -26,8 +28,6 @@ Parametry:
 Celkem 143 kombinací parametrů.
 
 Hodnota penalizace: `vzdálenost od cesty * DFPMP ^ 2 + DFPAP ^ 2 + DFPAP`
-
-### Výsledky
 
 Volba parametrů neměla skoro žádný vliv na šanci na výhru. Je možné, že při větším rozdílu hodnot by byl rozdíl výher větší.
 Konkrétně by mohlo mít smysl zvýšit hodnoty DFPMP, protože v rostoucím směru je rostoucí šance na výhru.
@@ -50,3 +50,25 @@ Pokud se podíváme, při jakých parametrech byl největší backtracking, pak 
 Další pohled na šanci na výhru a backtracking může ukazovat jistou spojitost mezi těmito hodnotami, konkrétně nepřímou úměrnost.
 Jelikož je rozdíl u procenta výher tak nízký, může toto pozorování být chybné.
 
+### Druhý pokus
+
+Parametry:
+ - NODE_DEPTH_WEIGHT = 1
+ - SEARCH_STEPS = 4 *(zvoleno podle Common Task)*
+ - DISTANCE_FROM_PATH_TOLERANCE = 0
+ - DISTANCE_FROM_PATH_ADDITIVE_PENALTY = (0, 1, ..., 10)
+ - DISTANCE_FROM_PATH_MULTIPLICATIVE_PENALTY = (0, 1, ..., 10)
+
+Celkem 121 kombinací parametrů.
+
+Všimněme si, že se zvyšující se cenou DFPMP se snižuje šance na výhru. Moje hypotéza je, že agent nemá takovou volnost a odejít z cesty je pro něj velice drahé, zdánlivě dražší než smrt.
+
+![Graph Win Percentages](pythonScripts//resultsConc/astarGrid2WinPercentage.png)
+
+Délka běhu je v souladu s výsledky z prvního pokusu. Se zvyšující se cenou za opuštění cesty se zvyšují výpočetní nároky. Moje hypotéza je že překážka v cestě může silně zkazit výpočet cesty.
+
+![Graph Run Time](pythonScripts/resultsConc/astarGrid2RunTime.png)
+
+Zde vidíme zdánlivě náhodné hodnoty. Hodnoty jsou zdánlivě v souladu s dělkou běhu, ale jelikož se jedná o maxima, nemusí být tyto hodnoty reprezentativní.
+
+![Graph Backtracking](pythonScripts/resultsConc/astarGrid2MostBacktracked.png)
