@@ -40,7 +40,7 @@ public class Agent implements IMarioAgentMFF, IAgentBenchmark, IGridHeuristic, I
                 return actionsList.remove(actionsList.size() - 1);
         }
 
-        AStarTree tree = new AStarTree(model, 3, levelTilesWithPath);
+        AStarTree tree = new AStarTree(model, 5, levelTilesWithPath);
         ArrayList<boolean[]> newActionsList = tree.search(timer);
         totalSearchCalls++;
         this.totalNodesEvaluated += tree.nodesEvaluated;

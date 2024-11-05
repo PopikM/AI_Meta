@@ -86,8 +86,8 @@ public class AStarTree {
             return 0;
         else
             return (distanceFromGridPath - DISTANCE_FROM_PATH_TOLERANCE)
-                    * DISTANCE_FROM_PATH_MULTIPLICATIVE_PENALTY
-                    + DISTANCE_FROM_PATH_ADDITIVE_PENALTY;
+                    * DISTANCE_FROM_PATH_MULTIPLICATIVE_PENALTY * DISTANCE_FROM_PATH_MULTIPLICATIVE_PENALTY
+                    + DISTANCE_FROM_PATH_ADDITIVE_PENALTY * DISTANCE_FROM_PATH_ADDITIVE_PENALTY + DISTANCE_FROM_PATH_ADDITIVE_PENALTY;
     }
 
     private int calculateDistanceFromGridPath(MarioForwardModelSlim nextState) {

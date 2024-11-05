@@ -1,0 +1,18 @@
+-SS-3
+TTFW:1.4
+level,win/fail,% travelled,run time,game ticks,planning time,total plannings,nodes evaluated,most backtracked nodes
+patternCount-1,false,0.93,13822,444,13820,444,640114,1315
+patternCount-2,true,1.00,38,450,8,1,269,19
+patternCount-3,true,1.00,9592,471,9591,293,382137,869
+patternCount-4,true,1.00,13,466,8,1,294,24
+patternCount-5,true,1.00,13,411,9,1,246,11
+patternCount-6,true,1.00,25,439,21,1,225,12
+patternCount-7,true,1.00,31,485,12,1,365,24
+patternCount-8,true,1.00,33,457,13,1,438,64
+patternCount-9,true,1.00,20,489,15,1,345,28
+patternCount-10,true,1.00,13,450,9,1,278,21
+patternCount-11,true,1.00,50,524,31,1,481,36
+patternCount-12,true,1.00,13,471,8,1,304,21
+patternCount-13,true,1.00,29,450,24,1,301,21
+patternCount-14,true,1.00,23,430,11,1,376,54
+patternCount-15,true,1.00,13,441,9,1,280,15
