@@ -14,7 +14,7 @@ Z grafů výše si můžeme všimnout, že šance na výhru je nepřímo úměrn
 
 Dále vidíme, že při `SEARCH_STEPS=20` agent téměř nevyhrává. Moje hypotéza je, že agent měl problém s navigací a tedy umřel na většině úrovní.
 
-## ELECTIVE TASK - Polynomiální penalizace při odchodu od cesty
+## ELECTIVE TASK - Polynomiální penalizace při odchodu od cesty - astarGrid
 
 ### První pokus
 
